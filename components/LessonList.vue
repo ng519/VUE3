@@ -22,7 +22,6 @@ export default {
     data() {
         return {
             product: "",
-            testing: "",
         };
     },
     methods: {
@@ -39,7 +38,7 @@ export default {
                 function (json) {
                     // note that we used 'store.product' instead of 'this.product'
                     
-                    this.testing = json;
+                    this.product = json;
                 })
                 
             })
