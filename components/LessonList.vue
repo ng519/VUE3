@@ -25,22 +25,7 @@ export default {
         onItemTap(event) {
             this.$emit("addProduct", event.item);
             // alert(event.item.name)
-        },
-        forceRerender() {
-            this.product
-        },
-        Load() {
-            fetch('https://assignment2vue.herokuapp.com/collection/Lessons').then(function (response) {
-            response.json().then(
-                function (json) {
-                    // note that we used 'store.product' instead of 'this.product'
-                    
-                    this.product = json;
-                })
-                
-            })
-                
-        }     
+        },   
     }  
 };
 </script>
