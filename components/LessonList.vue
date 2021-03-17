@@ -1,9 +1,6 @@
 <template>
     <StackLayout>
         <Label class="h2 p-10" textWrap="true" text="Tap a product to add it to cart" />
-        <Button @tap='Load' text='Load Lessons'/>
-        <Label :text="`Topic: ${this.product[0]}`"/>
-        <Label>Hi: {{ testing }}</Label>
         <ListView for='product in product' @itemTap='onItemTap'>
             <v-template>
                 <StackLayout>
