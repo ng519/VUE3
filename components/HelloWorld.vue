@@ -5,7 +5,7 @@
         <TabView>
             <!-- Product List Part -->
             <TabViewItem title="Product List" class="h2 text-capitalize">
-                <ProductList @addProduct="addToCart" />
+                <LessonList @addProduct="addToCart" />
             </TabViewItem>
             <!-- Checkout Part -->
             <TabViewItem title="Check out" class="h2 text-capitalize">
