@@ -7,7 +7,7 @@
         <ListView for='product in product' @itemTap='onItemTap'>
             <v-template>
                 <StackLayout>
-                    <component-to-re-render :key="`price: ${product[0]}`" />
+                    <component-to-re-render :key="`Topic: ${this.product}`" />
                     <!-- <Label :text='this.product'/> -->
                     <!-- <Label :text="`price: ${lessons.price}`"/>
                     <Label :text="`inventory: ${lessonsproduct.inventory}`"/> -->
