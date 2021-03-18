@@ -4,9 +4,10 @@
         <ListView for='product in products' @itemTap='onItemTap'>
             <v-template>
                 <StackLayout>
-                    <Label :text='product.name'/>
-                    <Label :text="`price: ${product.price}`"/>
-                    <Label :text="`inventory: ${product.inventory}`"/>
+                    <Label>Subject: {{ product.subject }} </Label>
+                    <Label>Location: {{ product.location }} </Label>
+                    <Label>Price: {{ product.price }} </Label>
+                    <Label>Space Available: {{ product.space }} </Label>
                 </StackLayout>
             </v-template>
         </ListView>
@@ -14,21 +15,24 @@
 </template>
 
 <script>
+
 export default {
     data() {
         return {
             products: [
-                { name: "product 1 ", price: 5, inventory: 10 },
-                { name: "product 2 ", price: 15, inventory: 10 },
-                { name: "product 3 ", price: 25, inventory: 10 },
-                { name: "product 4 ", price: 35, inventory: 10 }
-            ],
+                {id: 1001, subject: "Math", location: "Blackbird Down", price: 20, space: 10},
+                {id: 1002, subject: "English", location: "English Street", price: 17, space: 10},
+                {id: 1003, subject: "Physics", location: "Paradise East", price: 25, space: 10},
+                {id: 1004, subject: "Art", location: "Dene Park", price: 23, space: 10},
+                {id: 1005, subject: "Computer Studies", location: "Mallow Walk", price: 20, space: 10},
+                ],
         };
     },
     methods: {
         onItemTap(event) {
             this.$emit("addProduct", event.item);
             // alert(event.item.name)
+            event.item.space -= 1;
         }
     }
 };

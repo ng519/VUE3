@@ -5,14 +5,15 @@
         <ListView for="product in cart" @itemTap='onItemTap'>
             <v-template>
                 <StackLayout>
-                    <Label :text="product.name"/>
-                    <Label :text="`price: ${product.price}`"/>
-                    <Label :text="`inventory: ${product.inventory}`"/>
+                    <Label>Subject: {{ product.subject }} </Label>
+                    <Label>Location: {{ product.location }} </Label>
+                    <Label>Price: {{ product.price }} </Label>
+                    <Label>Space Available: {{ product.space}} </Label>
                 </StackLayout>
             </v-template> 
         </ListView>
-        <TextField hint='Name' v-model='name'/>
-        <TextField hint='Address' v-model='address'/>
+        <TextField hint='Name: ' v-model='name'/>
+        <TextField hint='Phone Number: ' v-model='phoneNumber'/>
         <Button @tap='sendOrderToServer' text='Submit Order'/>
     </StackLayout>
 </template>
@@ -29,13 +30,13 @@ export default {
         },
         submitOrder() {
 
-            alert('An order is placed by ' + this.name + " at " + this.address);
+            alert('An order is placed by ' + this.name + " at " + this.phoneNumber);
         },
         sendOrderToServer(){
             this.submitOrder();
                 const newProduct = 
                 {
-                    "Name": this.name, "Phone Number": this.address
+                    "Name": this.name, "Phone Number": this.phoneNumber
                 }
 
                 fetch('https://assignment2vue.herokuapp.com/collection/order', {
